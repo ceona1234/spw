@@ -45,6 +45,9 @@ public class GameEngine implements KeyListener, GameReporter{
 			Enemy e = new Enemy((int)(Math.random()*300), 30);
 			gp.sprites.add(e);
 			enemies.add(e);
+			Enemy2 e2 = new Enemy2((int)(Math.random()*300), (int)(Math.random()*600));
+			gp.sprites.add(e2);
+
 		}
 
 		private void process(){
@@ -89,6 +92,7 @@ public class GameEngine implements KeyListener, GameReporter{
 
 	public void die(){
 		timer.stop();
+		GameOver end = new GameOver( "Game Over" );
 	}
 
 	void controlVehicle(KeyEvent e) {
